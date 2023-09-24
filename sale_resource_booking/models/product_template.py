@@ -35,11 +35,13 @@ class ProductTemplate(models.Model):
             )
 
     resource_booking_type_id = fields.Many2one(
+        "resource.booking.type",
         compute="_compute_resource_booking_type",
         inverse="_inverse_resource_booking_type",
         store=False,
     )
     resource_booking_type_combination_rel_id = fields.Many2one(
+        "resource.booking.type.combination.rel",
         compute="_compute_resource_booking_type",
         inverse="_inverse_resource_booking_type",
         store=False,
