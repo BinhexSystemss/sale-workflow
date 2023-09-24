@@ -16,5 +16,9 @@ def migrate(cr, version):
             resource_booking_type_combination_rel_id =
                 t.resource_booking_type_combination_rel_id
         FROM product_template as t
-        WHERE p.product_tmpl_id = t.id;
+        WHERE p.product_tmpl_id = t.id
+        AND (t.resource_booking_type_id > 0
+            OR
+            t.resource_booking_type_combination_rel_id > 0
+        );
     """)
