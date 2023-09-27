@@ -50,7 +50,9 @@ class ProductProduct(models.Model):
         action = self.env["ir.actions.actions"]._for_xml_id(
             "resource_booking.resource_booking_action"
         )
+        installed_timeline = self._is_module_installed("resource_booking_timeline")
         action["context"] = {
+            "default_combination_auto_assign": False if installed_timeline else True,
             "default_product_id": self.id,
             "default_type_id": self.resource_booking_type_id.id,
         }
@@ -81,3 +83,7 @@ class ProductProduct(models.Model):
                     type_combination_rel.pop().id
                 )
         return products
+
+    def _is_module_installed(self, module_name):
+        module = self.env['ir.module.module'].search([('name', '=', module_name)])
+        return True if module and module.state == 'installed' else False
