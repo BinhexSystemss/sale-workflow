@@ -2,10 +2,10 @@
 <!-- Copyright 2021 Tecnativa - Jairo Llopis
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <data>
-    <record id="resource_booking_form" model="ir.ui.view">
+    <record id="resource_booking_view_form" model="ir.ui.view">
         <field name="name">Display sale order info in booking form</field>
         <field name="model">resource.booking</field>
-        <field name="inherit_id" ref="resource_booking.resource_booking_form" />
+        <field name="inherit_id" ref="resource_booking.resource_booking_view_form" />
         <field name="arch" type="xml">
             <header position="inside">
                 <button
@@ -45,7 +45,7 @@
         <field name="inherit_id" ref="resource_booking.resource_booking_view_tree" />
         <field name="arch" type="xml">
             <field name="partner_id" position="after">
-                <field name="product_id"/>
+                <field name="product_id" />
             </field>
         </field>
     </record>

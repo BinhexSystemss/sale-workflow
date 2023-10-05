@@ -9,7 +9,7 @@ class ProductProduct(models.Model):
 
     def _default_resource_booking_type_combination_rel_id(self):
         return self.product_tmpl_id.resource_booking_type_combination_rel_id
-    
+
     def _compute_resource_booking_count(self):
         for p in self:
             p.resource_booking_count = len(p.resource_booking_ids)
@@ -56,11 +56,9 @@ class ProductProduct(models.Model):
             "default_product_id": self.id,
             "default_type_id": self.resource_booking_type_id.id,
         }
-        try:
-            # depends on partner_product_price
+        # depends on partner_product_price
+        if "partner_id" in self._fields:
             action["context"]["default_partner_id"] = self.partner_id.id
-        except:
-            pass
         return action
 
     def create(self, vals_list):
@@ -85,5 +83,5 @@ class ProductProduct(models.Model):
         return products
 
     def _is_module_installed(self, module_name):
-        module = self.env['ir.module.module'].search([('name', '=', module_name)])
-        return True if module and module.state == 'installed' else False
+        module = self.env["ir.module.module"].search([("name", "=", module_name)])
+        return True if module and module.state == "installed" else False
