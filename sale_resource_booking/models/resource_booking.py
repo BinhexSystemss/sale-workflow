@@ -77,9 +77,10 @@ class ResourceBooking(models.Model):
         so_form.partner_id = self.partner_id
         with so_form.order_line.new() as sol_form:
             sol_form.product_id = self.product_id
-            # sol_form.product_uom_qty = self.product_uom_qty
-        so = so_form.save()
-        self.sale_order_line_id = so.order_line.id  # new
+        so = so_form.save()  # create sale order and line(s)
+        self.sale_order_line_id = so.order_line.filtered(
+            lambda l: l.product_id == self.product_id
+        ).id
         return {
             "res_id": so.id,
             "res_model": "sale.order",
