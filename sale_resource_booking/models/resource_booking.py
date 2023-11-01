@@ -16,6 +16,11 @@ class ResourceBooking(models.Model):
         ondelete="cascade",
         tracking=True,
     )
+    sale_order_line_ids = fields.One2many(
+        "sale.order.line",
+        "resource_booking_id",
+        string="Sale order lines",
+    )
     sale_order_id = fields.Many2one(
         related="sale_order_line_id.order_id",
         readonly=True,

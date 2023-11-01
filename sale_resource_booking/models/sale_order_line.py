@@ -13,6 +13,14 @@ class SaleOrderLine(models.Model):
         string="Resource bookings",
         copy=False,
     )
+    resource_booking_id = fields.Many2one(
+        "resource.booking",
+        string="Resource bookings",
+    )
+    order_line_partner_id = fields.Many2one(
+        "res.partner",
+        string="Contact",
+    )
 
     @api.model_create_multi
     def create(self, vals_list):
