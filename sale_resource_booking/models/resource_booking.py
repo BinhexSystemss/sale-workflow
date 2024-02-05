@@ -63,6 +63,12 @@ class ResourceBooking(models.Model):
             one.state = "scheduled"
         return result
 
+    @api.onchange("type_id")
+    def _onchange_type_id(self):
+        products = self.type_id.product_ids
+        if len(products) == 1:
+            self.product_id = products
+
     def action_sale_order_wizard(self):
         """Help user creating a sale order for this RB."""
         result = self.env["ir.actions.act_window"]._for_xml_id(
