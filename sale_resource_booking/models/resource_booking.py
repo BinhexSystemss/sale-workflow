@@ -1,7 +1,8 @@
 # Copyright 2021 Tecnativa - Jairo Llopis
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 from odoo.tests.common import Form
 
 
@@ -84,6 +85,9 @@ class ResourceBooking(models.Model):
 
     def action_generate(self):
         # Based on resource.booking.sale
+        self.ensure_one()
+        if not self.product_id:
+            raise UserError(_("You must select a product to create a sale order."))
         so_form = Form(self.env["sale.order"])
         so_form.partner_id = self.partner_id
         with so_form.order_line.new() as sol_form:
