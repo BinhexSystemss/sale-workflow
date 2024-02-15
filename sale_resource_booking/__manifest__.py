@@ -11,7 +11,7 @@
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "maintainers": ["Yajo"],
     "license": "AGPL-3",
-    "depends": ["sale", "resource_booking", "web_ir_actions_act_multi"],
+    "depends": ["sale", "portal", "resource_booking", "web_ir_actions_act_multi"],
     "data": [
         "views/product_attribute_views.xml",
         "views/product_product_views.xml",
@@ -20,6 +20,7 @@
         "views/resource_booking_views.xml",
         "views/sale_order_views.xml",
         "views/report_saleorder_document.xml",
+        "views/sale_order_portal_templates.xml",
         "views/menus.xml",
         "wizards/resource_booking_sale_views.xml",
         "wizards/sale_order_booking_confirm_views.xml",
