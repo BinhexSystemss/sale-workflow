@@ -19,6 +19,7 @@
         "views/resource_booking_type_views.xml",
         "views/resource_booking_views.xml",
         "views/sale_order_views.xml",
+        "views/report_saleorder_document.xml",
         "views/menus.xml",
         "wizards/resource_booking_sale_views.xml",
         "wizards/sale_order_booking_confirm_views.xml",
