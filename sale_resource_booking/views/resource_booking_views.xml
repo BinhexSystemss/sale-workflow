@@ -33,7 +33,11 @@
                     groups_id="[(4, ref('sales_team.group_sale_salesman'), 0)]"
                 >
                     <field name="sale_order_line_id" invisible="1" />
-                    <field name="sale_order_line_ids" invisible="1" />
+                    <field
+                        name="sale_order_line_ids"
+                        invisible="1"
+                        widget="many2many_tags"
+                    />
                     <field name="sale_order_id" />
                     <field name="sale_order_state" />
                 </group>
