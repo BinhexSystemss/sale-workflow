@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+<!-- Templates -->
+<template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+    <xpath expr="//th[@name='th_description']" position="after">
+        <t t-if="doc.resource_booking_count">
+            <th name="th_booking_start_date">Start Date</th>
+        </t>
+    </xpath>
+    <xpath expr="//td[@name='td_name']" position="after">
+        <t t-if="doc.resource_booking_count">
+            <td name="th_booking_start_date">
+                <span t-field="line.resource_booking_ids.start" />
+            </td>
+        </t>
+    </xpath>
+</template>
+
+</odoo>
