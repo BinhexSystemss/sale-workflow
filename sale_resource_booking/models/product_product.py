@@ -1,4 +1,8 @@
+import logging
+
 from odoo import fields, models
+
+_logger = logging.getLogger(__name__)
 
 
 class ProductProduct(models.Model):
@@ -65,6 +69,15 @@ class ProductProduct(models.Model):
         products = super().create(vals_list)
 
         # Get values from product.attribute.value
+        #
+        # FIXME
+        # WHEN a product has exactly one attribute,
+        # THEN the product should inherit the vales of these fields:
+        # - resource_booking_type_id
+        # . resource_booking_type_combination_rel_id
+        # How come values are assigned to the product, but not saved to the database?
+        products.flush_recordset()
+        products.invalidate_recordset()
         for product in products:
             _type = {
                 ptav.product_attribute_value_id.resource_booking_type_id
@@ -72,6 +85,11 @@ class ProductProduct(models.Model):
             }
             if _type and len(_type) == 1:
                 product.resource_booking_type_id = _type.pop().id
+                _logger.debug(
+                    "product.resource_booking_type_id: {}".format(
+                        product.resource_booking_type_id
+                    )
+                )
             type_combination_rel = {
                 ptav.product_attribute_value_id.resource_booking_type_combination_rel_id
                 for ptav in product.product_template_attribute_value_ids
@@ -80,6 +98,13 @@ class ProductProduct(models.Model):
                 product.resource_booking_type_combination_rel_id = (
                     type_combination_rel.pop().id
                 )
+                _logger.debug(
+                    "p.resource_booking_type_combination_rel_id: {}".format(
+                        product.resource_booking_type_combination_rel_id
+                    )
+                )
+            product.flush_recordset()
+            product.invalidate_recordset()
         return products
 
     def _is_module_installed(self, module_name):
