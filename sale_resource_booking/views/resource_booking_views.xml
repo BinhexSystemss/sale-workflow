@@ -7,14 +7,14 @@
         <field name="model">resource.booking</field>
         <field name="inherit_id" ref="resource_booking.resource_booking_view_form" />
         <field name="arch" type="xml">
-            <header position="inside">
+            <state position="before">
                 <button
                     name="action_generate"
                     string="Quote"
                     type="object"
                     help="Generate quotation."
                 />
-            </header>
+            </state>
             <group name="booking" position="inside">
                 <field
                     name="product_id"
