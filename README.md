@@ -27,8 +27,8 @@ addon | version | maintainers | summary
 [product_form_sale_link](product_form_sale_link/) | 16.0.1.0.1 |  | Adds a button on product forms to access Sale Lines
 [product_supplierinfo_for_customer_sale](product_supplierinfo_for_customer_sale/) | 16.0.1.0.0 |  | Loads in every sale order line the customer code defined in the product
 [sale_advance_payment](sale_advance_payment/) | 16.0.1.0.0 |  | Allow to add advance payments on sales and then use them on invoices
-[sale_auto_remove_zero_quantity_lines](sale_auto_remove_zero_quantity_lines/) | 16.0.1.0.2 |  | On sale confirmation remove lines with zero quantities
-[sale_automatic_workflow](sale_automatic_workflow/) | 16.0.1.0.2 |  | Sale Automatic Workflow
+[sale_auto_remove_zero_quantity_lines](sale_auto_remove_zero_quantity_lines/) | 16.0.1.1.0 |  | On sale confirmation remove lines with zero quantities
+[sale_automatic_workflow](sale_automatic_workflow/) | 16.0.1.1.0 |  | Sale Automatic Workflow
 [sale_automatic_workflow_job](sale_automatic_workflow_job/) | 16.0.1.0.0 |  | Execute sale automatic workflows in queue jobs
 [sale_automatic_workflow_payment_mode](sale_automatic_workflow_payment_mode/) | 16.0.1.0.0 |  | Sale Automatic Workflow - Payment Mode
 [sale_blanket_order](sale_blanket_order/) | 16.0.1.0.0 |  | Blanket Orders
@@ -38,12 +38,13 @@ addon | version | maintainers | summary
 [sale_delivery_split_date](sale_delivery_split_date/) | 16.0.1.0.0 |  | Sale Deliveries split by date
 [sale_delivery_state](sale_delivery_state/) | 16.0.1.0.1 |  | Show the delivery state on the sale order
 [sale_discount_display_amount](sale_discount_display_amount/) | 16.0.1.0.0 |  | This addon intends to display the amount of the discount computed on sale_order_line and sale_order level
-[sale_elaboration](sale_elaboration/) | 16.0.1.2.0 |  | Set an elaboration for any sale line
+[sale_elaboration](sale_elaboration/) | 16.0.1.5.0 | [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) | Set an elaboration for any sale line
 [sale_exception](sale_exception/) | 16.0.1.3.0 |  | Custom exceptions on sale order
 [sale_exception_holidays_public](sale_exception_holidays_public/) | 16.0.1.0.1 | [![jbaudoux](https://github.com/jbaudoux.png?size=30px)](https://github.com/jbaudoux) | Raise a sale exception if there is a commitment_date on the SO and this date is a public holidays for the shipping partner address
-[sale_fixed_discount](sale_fixed_discount/) | 16.0.1.0.0 |  | Allows to apply fixed amount discounts in sales orders.
-[sale_force_invoiced](sale_force_invoiced/) | 16.0.1.0.0 |  | Allows to force the invoice status of the sales order to Invoiced
+[sale_fixed_discount](sale_fixed_discount/) | 16.0.1.0.1 |  | Allows to apply fixed amount discounts in sales orders.
+[sale_force_invoiced](sale_force_invoiced/) | 16.0.2.1.0 |  | Allows to force the invoice status of the sales order to Invoiced
 [sale_invoice_frequency](sale_invoice_frequency/) | 16.0.1.2.1 | [![Shide](https://github.com/Shide.png?size=30px)](https://github.com/Shide) [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) [![EmilioPascual](https://github.com/EmilioPascual.png?size=30px)](https://github.com/EmilioPascual) | Define the invoice frequency for customers
+[sale_invoice_policy](sale_invoice_policy/) | 16.0.2.0.0 |  | Sales Management: let the user choose the invoice policy on the order
 [sale_last_price_info](sale_last_price_info/) | 16.0.1.0.0 |  | Product Last Price Info - Sale
 [sale_loyalty_exclude](sale_loyalty_exclude/) | 16.0.1.0.0 |  | Exclude products from sale loyalty program
 [sale_manual_delivery](sale_manual_delivery/) | 16.0.1.0.1 |  | Create manually your deliveries
@@ -71,27 +72,28 @@ addon | version | maintainers | summary
 [sale_order_price_recalculation](sale_order_price_recalculation/) | 16.0.1.0.0 |  | Recalculate prices / Reset descriptions on sale order lines
 [sale_order_product_availability_inline](sale_order_product_availability_inline/) | 16.0.1.0.0 | [![ernestotejeda](https://github.com/ernestotejeda.png?size=30px)](https://github.com/ernestotejeda) | Show product availability in sales order line product drop-down.
 [sale_order_product_picker](sale_order_product_picker/) | 16.0.1.1.1 |  | Sale Order Product Picker
-[sale_order_product_recommendation](sale_order_product_recommendation/) | 16.0.2.1.3 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) | Recommend products to sell to customer based on history
-[sale_order_product_recommendation_elaboration](sale_order_product_recommendation_elaboration/) | 16.0.1.0.3 | [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) | Include elaborations when generating or accepting sale order product recommendations
-[sale_order_product_recommendation_packaging_default](sale_order_product_recommendation_packaging_default/) | 16.0.2.1.1 | [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) | Quickly add recommended products to sale order by packagings
+[sale_order_product_recommendation](sale_order_product_recommendation/) | 16.0.3.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) | Recommend products to sell to customer based on history
+[sale_order_product_recommendation_elaboration](sale_order_product_recommendation_elaboration/) | 16.0.2.0.0 | [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) | Include elaborations when generating or accepting sale order product recommendations
+[sale_order_product_recommendation_packaging_default](sale_order_product_recommendation_packaging_default/) | 16.0.3.0.0 | [![rafaelbn](https://github.com/rafaelbn.png?size=30px)](https://github.com/rafaelbn) [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) | Quickly add recommended products to sale order by packagings
 [sale_order_product_recommendation_quick_add](sale_order_product_recommendation_quick_add/) | 16.0.1.0.0 |  | Add recommended products to sale order in a single click
 [sale_order_qty_change_no_recompute](sale_order_qty_change_no_recompute/) | 16.0.1.0.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Prevent recompute if only quantity has changed in sale order line
+[sale_order_report_without_price](sale_order_report_without_price/) | 16.0.1.0.0 |  | Allow you to generate quotation and order reports without price.
 [sale_order_revision](sale_order_revision/) | 16.0.1.0.1 |  | Keep track of revised quotations
 [sale_order_type](sale_order_type/) | 16.0.1.1.0 |  | Sale Order Type
 [sale_order_warn_message](sale_order_warn_message/) | 16.0.1.0.0 |  | Add a popup warning on sale to ensure warning is populated
-[sale_packaging_default](sale_packaging_default/) | 16.0.2.1.0 | [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) | Simplify using products default packaging for sales
+[sale_packaging_default](sale_packaging_default/) | 16.0.2.2.0 | [![yajo](https://github.com/yajo.png?size=30px)](https://github.com/yajo) | Simplify using products default packaging for sales
 [sale_partner_incoterm](sale_partner_incoterm/) | 16.0.1.0.0 |  | Set the customer preferred incoterm on each sales order
 [sale_partner_pricelist](sale_partner_pricelist/) | 16.0.1.0.0 |  | Sale Partner Pricelist
 [sale_partner_selectable_option](sale_partner_selectable_option/) | 16.0.1.1.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Sale Partner Selectable Option
-[sale_payment_sheet](sale_payment_sheet/) | 16.0.1.0.1 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Allow to create invoice payments to commercial users without accounting permissions
+[sale_payment_sheet](sale_payment_sheet/) | 16.0.1.1.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Allow to create invoice payments to commercial users without accounting permissions
 [sale_pricelist_from_commitment_date](sale_pricelist_from_commitment_date/) | 16.0.1.0.0 |  | Use sale order commitment date to compute line price from pricelist
 [sale_pricelist_technical](sale_pricelist_technical/) | 16.0.1.0.1 | [![legalsylvain](https://github.com/legalsylvain.png?size=30px)](https://github.com/legalsylvain) | Prevent some pricelists from being selected on order and customer forms
 [sale_procurement_customer](sale_procurement_customer/) | 16.0.1.0.0 |  | Allows to transmit the customer to the procurement group
 [sale_procurement_group_by_line](sale_procurement_group_by_line/) | 16.0.1.0.0 |  | Base module for multiple procurement group by Sale order
 [sale_product_category_menu](sale_product_category_menu/) | 16.0.1.0.0 |  | Shows 'Product Categories' menu item in Sales
-[sale_product_multi_add](sale_product_multi_add/) | 16.0.1.0.0 |  | Sale Product Multi Add
-[sale_product_packaging_container_deposit](sale_product_packaging_container_deposit/) | 16.0.1.0.1 |  | Sale Product Packaging Container Deposit
-[sale_product_set](sale_product_set/) | 16.0.2.0.0 |  | Sale product set
+[sale_product_multi_add](sale_product_multi_add/) | 16.0.1.1.0 |  | Sale Product Multi Add
+[sale_product_packaging_container_deposit](sale_product_packaging_container_deposit/) | 16.0.1.1.1 |  | Sale Product Packaging Container Deposit
+[sale_product_set](sale_product_set/) | 16.0.3.0.0 |  | Sale product set
 [sale_quotation_number](sale_quotation_number/) | 16.0.1.0.2 |  | Different sequence for sale quotations
 [sale_shipping_info_helper](sale_shipping_info_helper/) | 16.0.1.0.0 |  | Add shipping amounts on sale order
 [sale_sourced_by_line](sale_sourced_by_line/) | 16.0.1.0.0 |  | Multiple warehouse source locations for Sale order
@@ -108,13 +110,6 @@ addon | version | maintainers | summary
 [sale_wishlist](sale_wishlist/) | 16.0.1.0.0 |  | Handle sale wishlist for partners
 [sales_team_security](sales_team_security/) | 16.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) [![ivantodorovich](https://github.com/ivantodorovich.png?size=30px)](https://github.com/ivantodorovich) | New group for seeing only sales channel's documents
 [sell_only_by_packaging](sell_only_by_packaging/) | 16.0.1.1.0 |  | Manage sale of packaging
-
-
-Unported addons
----------------
-addon | version | maintainers | summary
---- | --- | --- | ---
-[sale_invoice_policy](sale_invoice_policy/) | 16.0.1.0.0 (unported) |  | Sales Management: let the user choose the invoice policy on the order
 
 [//]: # (end addons)
 
