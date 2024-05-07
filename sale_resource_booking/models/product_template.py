@@ -19,8 +19,6 @@ class ProductTemplate(models.Model):
                 v.resource_booking_type_combination_rel_id.id
                 for v in tmpl.product_variant_ids
             }
-            _logger.warning(_type)
-            _logger.warning(combination)
             tmpl.resource_booking_type_id = _type.pop() if len(_type) == 1 else None
             tmpl.resource_booking_type_combination_rel_id = (
                 combination.pop() if len(combination) == 1 else None
