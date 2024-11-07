@@ -234,7 +234,9 @@ class TestSaleInvoicePlan(common.TestSaleCommon):
             "Plan quantity: 5.0, exceed invoiceable quantity: 3.0", e.exception.args[0]
         )
         # Deliver all the rest and create invoice plan again
-        pick = self.so_product.picking_ids.filtered(lambda l: l.state != "done")
+        pick = self.so_product.picking_ids.filtered(
+            lambda picking: picking.state != "done"
+        )
         pick.mapped("move_ids_without_package").write({"quantity_done": 7.0})
         pick._action_done()
         wizard = self.env["sale.make.planned.invoice"].create({})

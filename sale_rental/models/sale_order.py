@@ -25,7 +25,8 @@ class SaleOrder(models.Model):
         res = super().action_cancel()
         for order in self:
             for line in order.order_line.filtered(
-                lambda l: l.rental_type == "rental_extension" and l.extension_rental_id
+                lambda line: line.rental_type == "rental_extension"
+                and line.extension_rental_id
             ):
                 initial_end_date = line.extension_rental_id.end_date
                 line.extension_rental_id.in_move_id.write(

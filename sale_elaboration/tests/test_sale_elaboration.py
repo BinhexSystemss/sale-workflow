@@ -135,7 +135,7 @@ class TestSaleElaboration(TransactionCase):
             ]
         )
         self.order.order_line.filtered(
-            lambda l: l.product_id == self.product_elaboration_B
+            lambda line: line.product_id == self.product_elaboration_B
         ).is_elaboration = False
         self.order.action_confirm()
         invoice = self.order._create_invoices()

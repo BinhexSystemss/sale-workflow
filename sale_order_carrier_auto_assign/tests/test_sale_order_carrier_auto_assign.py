@@ -28,7 +28,9 @@ class TestSaleOrderCarrierAutoAssign(TransactionCase):
         self.sale_order.action_confirm()
         self.assertEqual(self.sale_order.state, "sale")
         self.assertEqual(self.sale_order.carrier_id, self.normal_delivery_carrier)
-        delivery_line = self.sale_order.order_line.filtered(lambda l: l.is_delivery)
+        delivery_line = self.sale_order.order_line.filtered(
+            lambda line: line.is_delivery
+        )
         delivery_rate = self.normal_delivery_carrier.rate_shipment(self.sale_order)
         self.assertEqual(delivery_line.price_unit, delivery_rate["carrier_price"])
 

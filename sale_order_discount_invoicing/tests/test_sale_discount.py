@@ -321,7 +321,7 @@ class TestSaleInvoiceDiscount(TransactionCase):
                 line.is_split_discount_line,
             )
             for line in self.current_invoice.line_ids.sorted(
-                lambda l: (l.debit, l.credit)
+                lambda inv_line: (inv_line.debit, inv_line.credit)
             )
         ]
         if with_discount:

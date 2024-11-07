@@ -184,7 +184,7 @@ class TestSaleOrder(common.TransactionCase):
         so_line.onchange_product_id()
         self.assertEqual(
             so_line._get_eligible_bo_lines(),
-            bo_lines.filtered(lambda l: l.product_id == self.product),
+            bo_lines.filtered(lambda line: line.product_id == self.product),
         )
         bo_line_assigned = self.blanket_order_line_obj.search(
             [

@@ -242,7 +242,7 @@ class TestSaleInvoicePlan(common.TestSaleCommon):
         with self.assertRaises(ValidationError):
             self.so_service.action_confirm()
         advance_line = self.so_service.invoice_plan_ids.filtered(
-            lambda l: l.invoice_type == "advance"
+            lambda inv_plan: inv_plan.invoice_type == "advance"
         )
         self.assertEqual(len(advance_line), 1, "No one advance line")
         # Add 10% to advance
@@ -260,7 +260,7 @@ class TestSaleInvoicePlan(common.TestSaleCommon):
         # Valid total quantity of invoices (exclude Advance line)
         quantity = sum(
             invoices.mapped("invoice_line_ids")
-            .filtered(lambda l: l.product_id == self.product_order)
+            .filtered(lambda inv_line: inv_line.product_id == self.product_order)
             .mapped("quantity")
         )
         self.assertEqual(quantity, 1, "Wrong number of total invoice quantity")
