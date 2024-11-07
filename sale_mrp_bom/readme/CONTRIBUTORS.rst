@@ -3,3 +3,7 @@
 Trobz:
 
 * Hai Lang <hailn@trobz.com>
+
+Binhex:
+
+* Rolando Pérez <r.perez@binhex.cloud>
