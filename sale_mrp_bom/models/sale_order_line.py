@@ -16,6 +16,8 @@ class SaleOrderLine(models.Model):
         "('product_id', '=', False)]",
     )
 
+    can_set_bom_id = fields.Boolean(store=True, compute="_compute_can_set_bom_id")
+
     @api.constrains("bom_id", "product_id")
     def _check_match_product_variant_ids(self):
         for line in self:
@@ -32,3 +34,16 @@ class SaleOrderLine(models.Model):
                     "Please select BoM that has matched product with the line `{}`"
                 ).format(line_product.name)
             )
+
+    @api.depends("product_id.route_ids", "is_mto")
+    def _compute_can_set_bom_id(self):
+        manufacture_route = self.env.ref(
+            "mrp.route_warehouse0_manufacture", raise_if_not_found=False
+        )
+        for line in self:
+            can_set_bom_id = False
+            if line.product_id and manufacture_route:
+                can_set_bom_id = (
+                    manufacture_route in line.product_id.route_ids and line.is_mto
+                )
+            line.can_set_bom_id = can_set_bom_id
