@@ -47,10 +47,12 @@ class SaleOrderBlockWizard(models.TransientModel):
         for record in self:
             lines = record.mapped("sale_line_block_ids")
             record.is_packaging_adjustable = bool(
-                lines.filtered(lambda l: l.product_packaging_allowed_max_qty > 0.0)
+                lines.filtered(
+                    lambda line: line.product_packaging_allowed_max_qty > 0.0
+                )
             )
             record.is_uom_adjustable = bool(
-                lines.filtered(lambda l: l.product_uom_allowed_max_qty > 0.0)
+                lines.filtered(lambda line: line.product_uom_allowed_max_qty > 0.0)
             )
 
     def confirm(self):

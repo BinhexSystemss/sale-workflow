@@ -198,7 +198,7 @@ class BlanketOrder(models.Model):
                 order.state = "expired"
             elif float_is_zero(
                 sum(
-                    order.line_ids.filtered(lambda l: not l.display_type).mapped(
+                    order.line_ids.filtered(lambda line: not line.display_type).mapped(
                         "remaining_uom_qty"
                     )
                 ),
