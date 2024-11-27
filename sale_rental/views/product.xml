@@ -14,11 +14,7 @@
     <field name="inherit_id" ref="product.product_normal_form_view" />
     <field name="arch" type="xml">
         <group name="sale" position="inside">
-            <group
-                    name="rental-service"
-                    string="Rental"
-                    invisible="type == 'service'"
-                >
+            <group name="rental-service" string="Rental" invisible="type == 'service'">
                 <field name="rented_product_id" />
             </group>
             <group
