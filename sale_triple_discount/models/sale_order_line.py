@@ -101,7 +101,6 @@ class SaleOrderLine(models.Model):
         super(SaleOrderLine, self)._get_price_reduce()
         self.triple_discount_postprocess(prev_values)
 
-    @api.multi
     def triple_discount_preprocess(self):
         """Save the values of the discounts in a dictionary,
         to be restored in postprocess.
